@@ -1,0 +1,227 @@
+@import "model.djinni"
+
+list_change = record {
+    from_index: i32;
+    to_index: i32;
+}
+
+user_list_vm_cell = record {
+    user_id: i64;
+    name: string;
+}
+
+user_list_vm = interface +c {
+    # the total number of results in this list
+    count(): i32;
+    # get the data for an individual user
+    get(index: i32): optional<user_list_vm_cell>;
+
+    # Delete a row from the view model.  This view model will still remain immutable but a
+    # new view model will be sent through the observer interface.
+    delete_row(index: i32);
+}
+
+user_list_vm_observer = interface +o +j {
+    on_update(changes: optional<list<list_change>>, new_data: user_list_vm);
+}
+
+user_list_vm_handle = interface +c {
+    start(observer: user_list_vm_observer);
+    stop();
+}
+
+
+# next uc
+
+## common
+
+r_action_result = record {
+    result: e_callback_result;
+    code: i32;
+}
+
+i_action_callback = interface +j +o {
+    onResponse(result: r_action_result);
+}
+
+i_view_model_delegate = interface +j + o {
+    onDataChanged();
+}
+
+## lifecycle
+
+i_lifecyle_view_model_delegate = interface +j + o {
+    onAccountStatusChanged(status: e_account_status);
+}
+
+i_lifecycle_ui_controller = interface + c {
+    start();
+    getAccountInfo(): r_account_response;
+}
+
+## login
+
+i_login_view_model = interface +c {
+    
+    getUserName(): string;
+    setUserName(userName: string);
+
+    getPassword(): string;
+    setPassword(password: string);
+
+    setStatus(status: e_login_status);
+    getStatus():e_login_status;
+
+    isLoading(): bool;
+    setLoading(loading: bool);
+}
+
+i_login_ui_controller = interface +c {
+    
+    login();
+
+    getViewModel(): i_login_view_model;
+}
+
+i_signup_ui_controller = interface +c {
+    signup(userName: string, password: string, firstName: string, lastName: string, callback: i_action_callback);
+}
+
+## contact
+
+i_contact_table_data_source = interface +c {
+    numberOfSections(): i32;
+    numberOfRowsInSection(section: i32): i32;
+    objectAt(section: i32, row: i32): r_contact;
+}
+
+i_contact_view_model = interface +c {
+    setDataSource(dataSource: i_contact_table_data_source);
+    getDataSource(): i_contact_table_data_source;
+}
+
+i_contact_ui_controller = interface +c {
+    getViewModel(): i_contact_view_model;
+}
+
+## group 
+i_group_table_data_source = interface +c {
+    numberOfSections(): i32;
+    numberOfRowsInSection(section: i32): i32;
+    objectAt(section: i32, row: i32): r_group;
+}
+
+i_group_view_model = interface +c {
+    setDataSource(dataSource: i_group_table_data_source);
+    getDataSource(): i_group_table_data_source;
+}
+
+i_group_ui_controller = interface +c {
+    getViewModel(): i_group_view_model;
+}
+
+i_group_detail_view_model = interface +c {
+    setGroup(group: r_group);
+    getGroup(): r_group;
+}
+
+i_group_detail_ui_controller = interface + c{
+    getViewModel(): i_group_detail_view_model;
+    setGroup(group: r_group);
+
+    quit(callback: i_action_callback);
+}
+
+##create group
+
+i_group_callback = interface + j + o {
+    onGroupUpdated(group: r_group, code: e_callback_result);
+}
+
+i_group_create_ui_controller = interface + c {
+    createGroup(contacts: list<r_contact>, callback: i_group_callback);
+}
+
+## update group
+
+i_group_update_view_model = interface +c {
+    setGroup(group: r_group);
+    getGroup(): r_group;
+}
+
+i_group_update_ui_controller = interface + c {
+     updateGroupName(groupName: string, callback: i_group_callback);
+     getViewModel(): i_group_update_view_model;
+}
+
+i_group_member_view_model = interface +c {
+    setDataSource(dataSource: i_contact_table_data_source);
+    getDataSource(): i_contact_table_data_source;
+
+    setGroup(group: r_group);
+    getGroup(): r_group;
+}
+
+i_group_member_ui_controller = interface +c {
+    getViewModel(): i_group_member_view_model;
+    loadData(group: r_group);
+    addMembers(memberIds:list<string>, callback: i_group_callback);
+    removeMembers(memberIds:list<string>, callback: i_group_callback);
+}
+
+##profile
+
+i_request_upload_token_callback = interface +j +o {
+    onTokenGet(token: optional<r_upload_token>, result: r_action_result);
+}
+
+i_profile_view_model = interface +c {
+    setAccount(account: r_account);
+    getAccount(): r_account;
+}
+
+i_profile_ui_controller = interface +c {
+    getViewModel(): i_profile_view_model;
+    updateAvatar(avatarInfo: r_avatar_info, callback: i_action_callback);
+    requestUploadToken(callback:i_request_upload_token_callback);
+    signout(callback: i_action_callback);
+}
+
+## data provider
+i_data_change_delegate = interface +j +o {
+    onContactChanged(contact: r_contact);
+    onGroupChanged(group: r_group);
+}
+
+i_data_provider = interface +c {
+    
+    setDelegate(delegate: i_data_change_delegate);
+
+    hasContact(id: string): bool; 
+    hasGroup(id: string): bool;
+
+    getContact(id: string): r_contact;
+    getGroup(id: string): r_group;
+}
+
+## factory
+i_ui_controller_factory = interface +c {
+   
+    # login
+    createLifecycleUiController(delegate: i_lifecyle_view_model_delegate): i_lifecycle_ui_controller;
+    createLoginUiController(delegate: i_view_model_delegate): i_login_ui_controller;
+    createSignUpUiController(delegate: i_view_model_delegate): i_signup_ui_controller;
+
+    # contact
+    createContactUiController(delegate: i_view_model_delegate): i_contact_ui_controller;
+
+    # group
+    createGroupUiController(delegate: i_view_model_delegate): i_group_ui_controller;
+    createGroupCreateUiController(delegate: i_view_model_delegate): i_group_create_ui_controller;
+    createGroupUpdateUiController(delegate: i_view_model_delegate): i_group_update_ui_controller;
+    createGroupMemberUiController(delegate: i_view_model_delegate): i_group_member_ui_controller;
+    createGroupDetailUiController(delegate: i_view_model_delegate): i_group_detail_ui_controller;
+
+    # profiel
+    createProfileUiController(delegate: i_view_model_delegate): i_profile_ui_controller;
+}

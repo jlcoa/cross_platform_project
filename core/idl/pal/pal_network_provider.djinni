@@ -1,0 +1,75 @@
+# network provider
+e_request_type = enum {
+    rest;
+    download;
+    upload;
+}
+
+e_network_method = enum {
+    get;
+    post;
+    delete;
+    put;
+}
+
+e_request_status = enum {
+    idle;
+    executing;
+    executed;
+    cancel;
+}
+
+e_request_result = enum {
+    success;
+    no_network;
+    timeout;
+    parse_error;
+    unknow_error;
+}
+
+r_network_request = record {
+    requestID:i64;
+    host: string;
+    path: string;
+    request_method: e_network_method;
+    header: map<string, string>;
+    data: string;
+}
+
+r_network_response = record {
+    code: i64;
+    header: map<string, list<string>>;
+    status: e_request_result;
+    data: binary;
+    content_type: string;
+}
+
+i_network_callback = interface +c {
+    onSuccess(requestID: i64, response: r_network_response);
+    onFailure(requestID: i64, response: r_network_response);
+
+    # For uploading/downloading tasks only
+    onProgress(requestID: i64, max_size: i32, current_pos: i32);
+}
+
+i_network_provider = interface +o +j {
+    request(request: r_network_request, callback: i_network_callback);
+}
+
+e_network_status = enum {
+    Unknown;
+    NotReachable;
+    ReachableViaWWAN;
+    ReachableViaWiFi;
+}
+
+i_network_status_delegate = interface +c {
+    onNetworkStatusChanged(status: e_network_status);
+}
+
+i_network_status_provider = interface +o +j {
+    setDelegate(delegate: i_network_status_delegate);
+    getNetworkStatus(): e_network_status;
+    startMonitoring();
+    stopMonitoring();
+}

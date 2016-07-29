@@ -1,0 +1,6 @@
+# log
+i_file_storage_provider = interface +o +j {
+	getDocumentsPath(relative_path: string): string;
+	createRelativeFolder(relative_path: string);
+	remove(path: string);
+}

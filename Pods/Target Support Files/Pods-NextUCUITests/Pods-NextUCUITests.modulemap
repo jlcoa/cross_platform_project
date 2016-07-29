@@ -1,0 +1,6 @@
+framework module Pods_NextUCUITests {
+  umbrella header "Pods-NextUCUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,74 @@
+plugins {
+    id 'com.github.jlouns.cpe' version '0.1.0'
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.mx3"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            moduleName "mx3_android"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', '../../../platform/android/java_gen', '../../../platform/android/java']
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs = []
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+//task ndkBuild(type: CrossPlatformExec) {
+//
+//    File ndkDir = null//project.getPlugins().getPlugin('android').ndkFolder
+//    if (ndkDir == null) {
+//        ndkDir = file('/Users/coa.ke/Library/Android/sdk/ndk-bundle')
+//    }
+//
+//    // String MainDirectory = System.getProperty("user.dir") + '/app/'
+//    //File ndkDir = project.getPlugins().getPlugin('android').ndkFolder
+//    if (ndkDir == null) {
+//        ndkDir = file(System.env.ANDROID_NDK)
+//    }
+//
+//    if (ndkDir == null) {
+//        def gradle_project_root = project.rootProject.rootDir
+//        throw new GradleException("NDK is not configured. Make sure there is a local.properties " +
+//                "file with an ndk.dir entry in the directory ${gradle_project_root}, or set the " +
+//                "ANDROID_NDK envrionment variable")
+//    }
+//
+//    def ndkBuildExecutable = new File(ndkDir, 'ndk-build')
+//    if (!ndkBuildExecutable.exists()) {
+//        throw new GradleException("Could not find ndk-build. The configured NDK directory ${ndkDir} may not be correct.")
+//    }
+//    // Since this project actually follows the standard jni project layout, we don't need to set
+//    // the project path.  There would be no problem setting it, except I can't figure out how to
+//    // properly escape paths as env variables :(
+//    // environment("NDK_PROJECT_PATH", MainDirectory)
+//    environment("GYP_CONFIGURATION", "Release")
+//    commandLine(ndkBuildExecutable, "-j8")
+//}
+//
+//tasks.withType(JavaCompile) {
+//    compileTask -> compileTask.dependsOn ndkBuild
+//}

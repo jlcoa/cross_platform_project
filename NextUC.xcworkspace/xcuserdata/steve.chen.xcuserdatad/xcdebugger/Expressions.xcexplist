@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "core::AbstractTableDataSource&lt;std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, core_gen::RGroup, core::IGroupDao&gt;::addModel2Section(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, std::__1::shared_ptr&lt;core_gen::RGroup&gt;):abstract_table_data_source.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "specialized AppDelegate.onRCIMReceiveMessage(RCMessage!, left : Int32) -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cmMessage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "core::ObjectFetcher&lt;core_gen::RGroup, core::IGroupDao&gt;::notifyDataChange():object_fetcher.hpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

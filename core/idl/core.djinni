@@ -1,0 +1,27 @@
+@import "pal/pal.djinni"
+@import "network.djinni"
+
+@import "http.djinni"
+@import "event_loop.djinni"
+@import "thread.djinni"
+@import "view_model.djinni"
+
+api = interface +c {
+    static create_api(root_path: string, ui_thread: event_loop, http_impl: http, launcher: thread_launcher): api;
+    observer_user_list(): user_list_vm_handle;
+
+    has_user(): bool;
+    get_username(): string;
+    set_username(username: string);
+}
+
+i_xplatform_application = interface +c {
+	
+	initApp(palBundle: i_pal_bundle);
+	
+	static sharedApplication(): i_xplatform_application;
+
+	getUiControllerFactory(): i_ui_controller_factory;
+
+	getDataProvider(): i_data_provider;
+}

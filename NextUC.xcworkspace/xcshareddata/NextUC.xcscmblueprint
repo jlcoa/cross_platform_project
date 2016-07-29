@@ -1,0 +1,65 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "487293B43D654AA6D0424959FEEE983059AA9660",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "77B9B7FA5E3BC45F1DC99103C6E2497928B570E8" : 0,
+    "EC5E26294D7CB82BAE7D3DE45BAA4B4A5A632134" : 0,
+    "FF64BD022ED8E560404BB75C8299418DE89EA40D" : 0,
+    "B7E51B5C8AEFAE31BF600BFD863E0C92DB8F288E" : 0,
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0,
+    "487293B43D654AA6D0424959FEEE983059AA9660" : 0,
+    "B08156DDD97AB15A5D356D4D56FBF652F9A3C89E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "05578B27-3165-464C-98F1-F45B70720CAD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "77B9B7FA5E3BC45F1DC99103C6E2497928B570E8" : "ios\/NextUC\/core\/deps\/xcode-googletest\/",
+    "EC5E26294D7CB82BAE7D3DE45BAA4B4A5A632134" : "ios\/NextUC\/core\/",
+    "FF64BD022ED8E560404BB75C8299418DE89EA40D" : "..",
+    "B7E51B5C8AEFAE31BF600BFD863E0C92DB8F288E" : "ios\/NextUC\/core\/deps\/simpleini\/",
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "ios\/NextUC\/core\/deps\/djinni\/",
+    "487293B43D654AA6D0424959FEEE983059AA9660" : "ios\/",
+    "B08156DDD97AB15A5D356D4D56FBF652F9A3C89E" : "ios\/NextUC\/core\/deps\/json11\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NextUC",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NextUC\/NextUC.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:barrychen\/nextuc-x-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "487293B43D654AA6D0424959FEEE983059AA9660"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jianwche\/djinni.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mattstevens\/xcode-googletest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77B9B7FA5E3BC45F1DC99103C6E2497928B570E8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/libmx3\/json11.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B08156DDD97AB15A5D356D4D56FBF652F9A3C89E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/brofield\/simpleini.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B7E51B5C8AEFAE31BF600BFD863E0C92DB8F288E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:barrychen\/NextUC-Core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EC5E26294D7CB82BAE7D3DE45BAA4B4A5A632134"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:cpcxm\/NextUC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FF64BD022ED8E560404BB75C8299418DE89EA40D"
+    }
+  ]
+}

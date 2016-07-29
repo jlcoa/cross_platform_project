@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/platform/ios/gen/CoreIRequestUploadTokenCallback+Private.mm \
+  platform/ios/gen/CoreIRequestUploadTokenCallback+Private.h \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/i_request_upload_token_callback.hpp \
+  deps/optional/optional.hpp \
+  platform/ios/gen/CoreIRequestUploadTokenCallback.h \
+  platform/ios/gen/CoreRActionResult.h \
+  platform/ios/gen/CoreECallbackResult.h \
+  platform/ios/gen/CoreRUploadToken.h \
+  platform/ios/gen/CoreRActionResult+Private.h \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/r_action_result.hpp \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/e_callback_result.hpp \
+  platform/ios/gen/CoreRUploadToken+Private.h \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/r_upload_token.hpp \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/../network/json/serialization_json.hpp \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/../network/json/json_parsing_failed.hpp \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/../network/json/json_serialization_exceptions.hpp \
+  deps/json11/json11.hpp \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/../network/json/../common/string_algo.hpp \
+  /Users/steve.chen/Documents/Development/projects/NextUC/unified/ios/NextUC/core/src/interface/../network/json/../common/stringable.hpp \
+  deps/djinni/support-lib/objc/DJIMarshal+Private.h \
+  deps/djinni/support-lib/objc/DJIObjcWrapperCache+Private.h \
+  deps/djinni/support-lib/objc/../proxy_cache_interface.hpp

@@ -1,0 +1,12 @@
+# task and dispatcher
+i_task = interface +c {
+    getId(): i32;
+    execute();
+}
+
+i_task_dispatcher = interface +o +j {
+    dispatchToUI(task: i_task);
+    dispatchToCore(task: i_task);
+    dispatchToDB(task: i_task);
+    dispatchToBG(task: i_task);
+}

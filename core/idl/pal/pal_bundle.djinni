@@ -1,0 +1,12 @@
+@import "./pal_network_provider.djinni"
+@import "./pal_logger.djinni"
+@import "./pal_file_storage_provider.djinni"
+@import "./pal_task_dispatcher.djinni"
+
+i_pal_bundle = interface +j +o {
+    getNetworkProvider(): i_network_provider;
+    getLog(): i_log;
+    getFileStorageProvider(): i_file_storage_provider;
+    getNetworkStatusProvider(): i_network_status_provider;
+    getTaskDispatcher(): i_task_dispatcher;
+}

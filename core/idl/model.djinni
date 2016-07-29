@@ -1,0 +1,122 @@
+e_callback_result = enum {
+	success;
+	failure;
+}
+
+# account
+
+e_login_status = enum {
+    in_progress;
+    invalid_credentials;
+    success;
+    failure;
+}
+
+e_account_status = enum {
+	not_logged_in;
+    in_progress;
+    logged_in;
+}
+
+r_account = record {
+
+	const GRAND_TYPE_PASSWORD: string = "password";
+
+	username: optional<string>;
+	password: optional<string>;
+	grant_type: optional<string>;
+	id: optional<string>;
+	email: optional<string>;
+	firstName: optional<string>;
+	lastName: optional<string>;
+	displayName: optional<string>;
+	companyId: optional<string>;
+
+	rongCloudToken: optional<string>;
+
+	avatarUrl: optional<string>;
+
+} deriving (js)
+
+r_account_response = record {
+	access_token: string;
+	refresh_token: string;
+	expires_in: optional<i32>;
+
+	user: r_account;
+} deriving (js)
+
+# contact 
+
+r_contact = record {
+	
+	username: optional<string>;
+	id: optional<string>;
+	email: optional<string>;
+	firstName: optional<string>;
+	lastName: optional<string>;
+	displayName: optional<string>;
+	companyId: optional<string>;
+
+	avatarUrl: optional<string>;
+
+} deriving (js, db)
+
+r_contact_response = record {
+	contacts: optional<list<r_contact>>;
+} deriving (js)
+
+# group
+
+r_group = record {
+
+	const TYPE_GROUP: string = "TeamRoom";
+
+	id: optional<string>;
+	groupName: optional<string>; 
+	groupType: optional<string>;
+#	membersCount: optional<i64>;
+
+	userIds: optional<list<string>>;
+	owner: optional<list<string>>; 
+	admin: optional<list<string>>;
+
+} deriving (js, db)
+
+e_group_member_type = enum {
+	MEMBER;
+	OWNER;
+	ADMIN;
+}
+
+r_group_member = record {
+	id: optional<string>;
+	groupId: optional<string>;
+	userId: optional<string>;
+	type: optional<e_group_member_type>;
+
+} deriving (db)
+
+r_group_response = record {
+	groups: optional<list<r_group>>;
+} deriving (js)
+
+r_group_update_response = record {
+	group: optional<r_group>;
+} deriving (js)
+
+r_upload_token = record {
+	userId: optional<string>;
+	avatarUploadToken: optional<string>;
+} deriving (js)
+
+r_avatar_info = record {
+	userId: optional<string>;
+	avatarUrl: optional<string>;
+	avatarUploadToken: optional<string>;
+} deriving (js)
+
+r_avatar_domain = record {
+	domain: optional<string>;
+} deriving (js)
+

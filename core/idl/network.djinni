@@ -1,0 +1,57 @@
+e_error_type = enum {
+    success;
+    network_failure;
+    timeout;
+    server_failure;
+    parse_failure;
+    unknown;
+}
+
+r_server_error_detail = record {
+    error_code: string;
+    message: string;
+    parameter: optional<string>;
+    parameterName: optional<string>;
+}
+
+r_server_error = record {
+    error_code: optional<string>;
+    message: optional<string>;
+    parameterName: optional<string>;
+    parameter: optional<string>;
+    errors: list<r_server_error_detail>;
+    error: optional<string>;
+    errorDescription: optional<string>;
+}
+
+r_network_error = record {
+    error_code: i32;
+}
+
+r_parsing_error = record {
+    message: string;
+}
+
+r_future_error = record {
+    type: e_error_type;
+    serverSrror: optional<r_server_error>;
+    parsingError: optional<r_parsing_error>;
+    networkError: optional<r_network_error>;
+    generalMessage: optional<string>;
+}
+
+e_future_status = enum {
+    executing;
+    complete;
+    failed;
+}
+
+r_integer_id_error = record {
+    id: i64;
+    error: r_future_error;
+}
+
+r_string_id_error = record {
+    id: string;
+    error: r_future_error;
+}

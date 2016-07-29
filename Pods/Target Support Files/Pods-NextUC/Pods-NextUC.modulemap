@@ -1,0 +1,6 @@
+framework module Pods_NextUC {
+  umbrella header "Pods-NextUC-umbrella.h"
+
+  export *
+  module * { export * }
+}

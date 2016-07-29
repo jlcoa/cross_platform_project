@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "487293B43D654AA6D0424959FEEE983059AA9660" : 0,
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0,
+    "EC5E26294D7CB82BAE7D3DE45BAA4B4A5A632134" : 0,
+    "FF64BD022ED8E560404BB75C8299418DE89EA40D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "25779F0A-BA23-49D2-A77B-0BE969B30D0F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "487293B43D654AA6D0424959FEEE983059AA9660" : "..\/..\/..",
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "djinni\/",
+    "EC5E26294D7CB82BAE7D3DE45BAA4B4A5A632134" : "..",
+    "FF64BD022ED8E560404BB75C8299418DE89EA40D" : "..\/..\/..\/..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TextSort",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "example\/objc\/TextSort.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:barrychen\/nextuc-x-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "487293B43D654AA6D0424959FEEE983059AA9660"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jianwche\/djinni.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:barrychen\/NextUC-Core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EC5E26294D7CB82BAE7D3DE45BAA4B4A5A632134"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:cpcxm\/NextUC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FF64BD022ED8E560404BB75C8299418DE89EA40D"
+    }
+  ]
+}
